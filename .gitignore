@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+coverage/
+ios/Pods/
+android/.gradle/
+android/app/build/
+.env
+.env.*
+!.env.example

@@ -4,7 +4,7 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(react-native|@react-native|@react-navigation|@react-native-async-storage)/)',
   ],
-  setupFiles: ['./jest.setup.js'],
+  setupFilesAfterEnv: ['./jest.setup.js'],
   testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)'],
   moduleNameMapper: {

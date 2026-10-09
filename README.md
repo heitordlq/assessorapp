@@ -1,57 +1,54 @@
 # Assessor App
 
-Aplicativo mobile desenvolvido com React Native e TypeScript para gerenciamento de mensagens e relatórios.
+[![CI](https://github.com/heitordlq/assessorapp/actions/workflows/ci.yml/badge.svg)](https://github.com/heitordlq/assessorapp/actions/workflows/ci.yml)
+![React Native](https://img.shields.io/badge/React_Native-0.73-20232A?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 
-## Tecnologias Utilizadas
+Aplicativo mobile em React Native e TypeScript para gerenciamento de mensagens e relatórios. Consome uma API configurável.
 
-- React Native
-- TypeScript
-- React Navigation
-- React Native Paper
-- Axios
-- AsyncStorage
+## Stack
 
-## Configuração do Ambiente
+- React Native e TypeScript
+- React Navigation (navegação) e React Native Paper (componentes)
+- Axios (HTTP), AsyncStorage (armazenamento local) e Zustand (estado)
+- Jest e Testing Library (testes)
 
-1. Clone o repositório
-2. Instale as dependências:
+## Como rodar
+
 ```bash
-npm install
+npm ci
 ```
 
-3. Configure o arquivo `src/config/env.ts` com a URL da sua API
+Configure a URL da API em `src/config/env.ts` e rode no emulador:
 
-4. Execute o projeto:
 ```bash
-# Para Android
 npm run android
-
-# Para iOS
 npm run ios
-
-# Para Web
-npm run web
 ```
 
-## Estrutura do Projeto
+Testes:
 
+```bash
+npm test
 ```
+
+## Estrutura
+
+```text
 src/
-  ├── components/     # Componentes reutilizáveis
-  ├── contexts/       # Contextos do React (Auth, etc)
-  ├── hooks/         # Custom hooks
-  ├── routes/        # Configuração de navegação
-  ├── screens/       # Telas do aplicativo
-  ├── services/      # Serviços (API, etc)
-  ├── theme/         # Configuração de tema
-  └── utils/         # Funções utilitárias
+  components/   componentes reutilizáveis
+  contexts/     contextos do React (autenticação etc.)
+  hooks/        hooks (cache de dados, autenticação, histórico, notificações)
+  routes/       navegação
+  screens/      telas
+  services/     API
+  theme/        tema
+  utils/        utilitários
 ```
 
-## Funcionalidades
+## Estado do projeto
 
-- Autenticação com JWT
-- Dashboard com resumo financeiro
-- Listagem de mensagens
-- CRUD de mensagens
-- Relatórios
-- Gráficos de gastos por categoria 
+Projeto pessoal de estudo, sem manutenção ativa.
+
+- Os testes dos hooks de cache e de autenticação rodam em CI. Parte deles (22 de 30) está marcada com `it.skip` porque ficou desatualizada em relação aos hooks e precisa ser reescrita.
+- Algumas telas importam pacotes que ainda não estão no `package.json` (por exemplo `react-native-chart-kit`, `react-native-biometrics`, `react-native-toast-message` e `@react-navigation/bottom-tabs`). Instale-os antes de rodar o app em um emulador.
